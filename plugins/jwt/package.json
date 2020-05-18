@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "version": "0.0.1",
+  "main": "jwt.js",
+  "private": true,
+  "plugin": {
+    "provides": ["jwt"],
+    "consumes": ["api"]
+  }
+}
