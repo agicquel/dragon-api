@@ -16,7 +16,7 @@ module.exports = function(options, imports, register) {
                         });
                     }
                     else {
-                        req.decoded = decoded;
+                        res.locals.userId = decoded.id;
                         next();
                     }
                 });

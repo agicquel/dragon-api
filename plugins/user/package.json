@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "user.js",
   "plugin": {
-    "consumes": ["api", "db", "jwt"],
-    "provides": ["user"]
+    "provides": ["user"],
+    "consumes": ["api", "db", "jwt"]
   }
 }

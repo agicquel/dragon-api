@@ -20,7 +20,11 @@ module.exports = function(options, imports, register) {
     api.useRouter("/users", router);
 
     register(null, {
-        user: {}
+        user: {
+            model: function(name, schema) {
+                return userModel;
+            },
+        }
     });
 
 }

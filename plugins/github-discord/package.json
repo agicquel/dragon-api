@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "version": "0.0.1",
+  "main": "githubDiscord.js",
+  "private": true,
+  "plugin": {
+    "provides": [],
+    "consumes": ["service", "service_metadata"]
+  }
+}

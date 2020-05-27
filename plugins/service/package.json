@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "version": "0.0.1",
+  "main": "service.js",
+  "private": true,
+  "plugin": {
+    "provides": ["service", "service_metadata"],
+    "consumes": ["api", "db", "jwt", "user"]
+  }
+}
