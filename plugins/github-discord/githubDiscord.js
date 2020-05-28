@@ -11,18 +11,21 @@ module.exports = function(options, imports, register) {
                 const id = service.meta.find(meta => meta.key === "discord-id");
                 const token = service.meta.find(meta => meta.key === "discord-token");
                 if(id !== undefined && token !== undefined) {
+                    console.log(emitData);
                     const webhookClient = new Discord.WebhookClient(id.value, token.value);
                     const embed = new Discord.MessageEmbed()
                         .setTitle(emitData.event + " by " + emitData.payload.sender.login)
                         .setURL(emitData.payload.repository.html_url)
                         .setDescription('Repository : ' + emitData.payload.repository.full_name)
-                        .setImage("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
                         .setThumbnail(emitData.payload.sender.avatar_url)
                         .setTimestamp()
                         .setColor('#0099ff');
 
                     if(emitData.event === "push") {
-                        embed.addField("Commit message", emitData.payload.commits.message, false);
+                        embed.addField("Commit message", emitData.payload.head_commit.message, false);
+                        embed.addField("Commit ID", emitData.payload.head_commit.id, false);
+                        embed.addField("Pusher name", emitData.payload.pusher.name, false);
+                        embed.addField("Pusher email", emitData.payload.pusher.email, false);
                     }
 
                     webhookClient.send('Github Notification /!\\', {
