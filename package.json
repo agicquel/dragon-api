@@ -14,15 +14,17 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "architect": "~0.1.0",
     "bcrypt": "^4.0.1",
+    "bl": "^4.0.2",
     "body-parser": "^1.19.0",
+    "creationix": "~0.3.1",
+    "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.21.3",
     "helmet-csp": "^2.9.5",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.3",
-    "architect": "~0.1.0",
-    "creationix": "~0.3.1"
+    "mongoose": "^5.9.3"
   }
 }

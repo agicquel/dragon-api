@@ -1,6 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken');
 
-
 module.exports = function(options, imports, register) {
     var api = imports.api;
     api.set('secretKey', process.env.JWT_KEY);
@@ -23,5 +22,4 @@ module.exports = function(options, imports, register) {
             }
         }
     });
-
 }

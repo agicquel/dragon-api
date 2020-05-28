@@ -16,10 +16,11 @@ module.exports = function(options, imports, register) {
 
     router.get('/', jwt.validate, serviceController.getAll);
     router.post('/', jwt.validate, serviceController.add);
+    router.post('/:id/meta/add', jwt.validate, serviceController.addMeta);
     router.get('/:id', jwt.validate, serviceController.get);
     router.delete('/:id', jwt.validate, serviceController.remove);
     router.put('/:id', jwt.validate, serviceController.update);
-    router.use('/:id/:service', jwt.validate, serviceController.service);
+    router.use('/:id/:service', serviceController.service);
 
     api.useRouter("/service", router);
 

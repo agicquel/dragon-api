@@ -5,6 +5,6 @@
   "private": true,
   "plugin": {
     "provides": [],
-    "consumes": ["service", "service_metadata"]
+    "consumes": ["service"]
   }
 }

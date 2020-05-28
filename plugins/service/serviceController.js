@@ -78,6 +78,27 @@ module.exports = function(Service, User, ServiceMetadata, registered_services) {
             });
         },
 
+        addMeta: function (req, res) {
+            Service.findOneAndUpdate({_id: req.params.id}, {
+                $push: {
+                    meta: new ServiceMetadata({
+                        key: req.body.key,
+                        value: req.body.value
+                    })
+                }
+            }, {
+                new: true
+            }, function (err, service) {
+                if (err) {
+                    res.status(400).send(err);
+                } else if (service == null) {
+                    res.status(404).send("Service not found");
+                } else {
+                    res.status(200).json(service);
+                }
+            });
+        },
+
         service : function (req, res) {
             Service.findOne({_id: req.params.id}, function (err, service) {
                 if (err) {
